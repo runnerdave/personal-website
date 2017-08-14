@@ -43,16 +43,16 @@
     - update the site frequently
 
 
-#Content structure
+# Content structure
 
-##Main Navigation:
+## Main Navigation:
 1. Who I am (Section 1)
 2. What I do (Section x)
 3. Experience (Section xx)
 4. Blog posts (Section xxx)
 
 
-##Section 0: Header with hero image and navigation
+## Section 0: Header with hero image and navigation
 Title: None
 
 Welcome to my website
