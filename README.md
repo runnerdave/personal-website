@@ -58,3 +58,8 @@ Title: None
 Welcome to my website
 Button 1: follow me (go down to sign up section)
 Button 2: Show me more (go down to next section)
+
+## TODO:
+* Colour palette
+* Reconcile nav and section 0 from README with html
+
