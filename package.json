@@ -1,0 +1,39 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "my personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runnerdave/personal-website.git"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "david",
+    "a",
+    "jimenez"
+  ],
+  "author": "David A Jimenez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runnerdave/personal-website/issues"
+  },
+  "homepage": "https://github.com/runnerdave/personal-website#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "imagemin-jpeg-recompress": "^5.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "static-server": "^2.0.5"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.0.0"
+  }
+}

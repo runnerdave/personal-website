@@ -63,3 +63,29 @@ Button 2: Show me more (go down to next section)
 * Colour palette
 * Reconcile nav and section 0 from README with html
 
+# Setting up gulp
+
+````
+npm init
+npm install gulp --save
+npm install static-server --save
+npm install gulp-autoprefixer@3.1.0 --save-dev
+npm install --save-dev gulp-imagemin@3.0.1 
+npm install --save imagemin-pngquant@5.0.0
+npm install --save imagemin-jpeg-recompress@5.0.0
+npm install --save-dev del
+npm install --save-dev gulp-zip
+npm install --save-dev gulp-util
+
+````
+
+# Running the site locally with node
+````
+node server.js
+````
+
+# Calling gulp with vars
+````
+gulp --key=$AWS_KEY --user=$EC2_162
+````
+
