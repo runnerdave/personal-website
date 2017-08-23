@@ -76,6 +76,7 @@ npm install --save imagemin-jpeg-recompress@5.0.0
 npm install --save-dev del
 npm install --save-dev gulp-zip
 npm install --save-dev gulp-util
+npm install gulp-exec --save-dev
 
 ````
 
@@ -87,5 +88,10 @@ node server.js
 # Calling gulp with vars
 ````
 gulp --key=$AWS_KEY --user=$EC2_162
+````
+
+# Push to server
+````
+gulp scp --key=$AWS_KEY --user=$EC2_162
 ````
 

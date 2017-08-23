@@ -3,6 +3,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var del = require('del');
 var zip = require('gulp-zip');
 var gutil = require('gulp-util');
+var exec = require('gulp-exec');
+
 
 //image compression
 var imagemin = require('gulp-imagemin');
@@ -28,6 +30,24 @@ gulp.task('images', function () {
             ]
         ))
         .pipe(gulp.dest(DIST_PATH + '/resources/images'));
+});
+
+gulp.task('scp', function() {
+    var options = {
+        continueOnError: false, // default = false, true means don't emit error event
+        pipeStdout: false, // default = false, true means stdout is written to file.contents
+    };
+    var reportOptions = {
+        err: true, // default = true, false means don't write err
+        stderr: true, // default = true, false means don't write stderr
+        stdout: true // default = true, false means don't write stdout
+    }
+    return gulp.src('website.zip')
+        .pipe(exec('scp -i ' + gutil.env.key + ' <%= file.path %> ' + gutil.env.user + ':"exchange/"'))
+        .pipe(exec.reporter(reportOptions))
+        .on('error', function(err) {
+            console.log(err);
+        });
 });
 
 gulp.task('clean', function () {
