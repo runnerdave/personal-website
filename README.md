@@ -76,8 +76,11 @@ npm install --save imagemin-jpeg-recompress@5.0.0
 npm install --save-dev del
 npm install --save-dev gulp-zip
 npm install --save-dev gulp-util
-npm install gulp-exec --save-dev
-
+npm install --save-dev gulp-exec
+npm install --save-dev gulp-concat
+npm install --save-dev gulp-clean-css
+npm install --save-dev gulp-sourcemaps
+npm install --save-dev gulp-plumber
 ````
 
 # Running the site locally with node
