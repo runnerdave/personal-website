@@ -1,31 +1,33 @@
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
-var del = require('del');
-var zip = require('gulp-zip');
-var gutil = require('gulp-util');
-var exec = require('gulp-exec');
-var concat = require('gulp-concat');
-var cleanCss = require('gulp-clean-css');
-var sourcemaps = require('gulp-sourcemaps');
-var plumber = require('gulp-plumber');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
+const zip = require('gulp-zip');
+const gutil = require('gulp-util');
+const exec = require('gulp-exec');
+const concat = require('gulp-concat');
+const cleanCss = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
 
 
 //image compression
-var imagemin = require('gulp-imagemin');
-var imageminOptipng = require('imagemin-optipng');
-var imageminSvgo = require('imagemin-svgo');
-var imageminPngquant = require('imagemin-pngquant');
-var imageminJpegRecompress = require('imagemin-jpeg-recompress');
-var imageminJpegtran = require('imagemin-jpegtran');
+const imagemin = require('gulp-imagemin');
+const imageminOptipng = require('imagemin-optipng');
+const imageminSvgo = require('imagemin-svgo');
+const imageminPngquant = require('imagemin-pngquant');
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
+const imageminJpegtran = require('imagemin-jpegtran');
 
-var DIST_PATH = 'public/dist/resources';
-var IMAGES_PATH = 'public/resources/**/images/**/*.{png,jpeg,jpg,svg,gif}';
-var CSS_PATH = 'public/resources/css/**/*.css';
-var ZIP_FILE = 'website.zip';
+const DIST_PATH = 'public/dist';
+const DIST_RESOURCES_PATH = DIST_PATH + '/resources';
+const DIST_VENDOR_PATH = DIST_PATH + '/vendor';
+const IMAGES_PATH = 'public/resources/**/images/**/*.{png,jpeg,jpg,svg,gif}';
+const CSS_PATH = 'public/resources/css/**/*.css';
+const ZIP_FILE = 'website.zip';
+const VENDOR_PATH = 'public/vendor/**/*';
 
 //Styles
 gulp.task('styles', function () {
-    console.log('starting styles task');
 
     return gulp.src([CSS_PATH])
         .pipe(plumber(function (err) {
@@ -38,8 +40,14 @@ gulp.task('styles', function () {
         .pipe(concat('styles.css'))
         .pipe(cleanCss())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(DIST_PATH + '/css'));
+        .pipe(gulp.dest(DIST_RESOURCES_PATH + '/css'));
 });
+
+//Vendor
+gulp.task('vendor', function () {
+    return gulp.src(VENDOR_PATH)
+        .pipe(gulp.dest(DIST_VENDOR_PATH))
+})
 
 // Images
 gulp.task('images', function () {
@@ -53,15 +61,15 @@ gulp.task('images', function () {
                 imageminJpegtran()
             ]
         ))
-        .pipe(gulp.dest(DIST_PATH));
+        .pipe(gulp.dest(DIST_RESOURCES_PATH));
 });
 
 gulp.task('scp', function() {
-    var options = {
+    const options = {
         continueOnError: false, // default = false, true means don't emit error event
         pipeStdout: false, // default = false, true means stdout is written to file.contents
     };
-    var reportOptions = {
+    const reportOptions = {
         err: true, // default = true, false means don't write err
         stderr: true, // default = true, false means don't write stderr
         stdout: true // default = true, false means don't write stdout
@@ -84,7 +92,7 @@ gulp.task('export', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', function () {
+gulp.task('default', ['clean', 'images', 'vendor', 'styles'], function () {
     console.log('aws key:'+gutil.env.key)
     console.log('user:'+gutil.env.user)
 })
