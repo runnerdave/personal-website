@@ -22,14 +22,14 @@ const DIST_PATH = 'public/dist';
 const DIST_RESOURCES_PATH = DIST_PATH + '/resources';
 const DIST_VENDOR_PATH = DIST_PATH + '/vendor';
 const IMAGES_PATH = 'public/resources/**/images/**/*.{png,jpeg,jpg,svg,gif}';
-const CSS_PATH = 'public/resources/css/**/*.css';
+const CSS_PATH = 'public/resources/css';
 const ZIP_FILE = 'website.zip';
 const VENDOR_PATH = 'public/vendor/**/*';
 
 //Styles
 gulp.task('styles', function () {
 
-    return gulp.src([CSS_PATH])
+    return gulp.src(CSS_PATH + '/styles.css')
         .pipe(plumber(function (err) {
             console.log('Styles task error!');
             console.log(err);
@@ -38,6 +38,23 @@ gulp.task('styles', function () {
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
         .pipe(concat('styles.css'))
+        .pipe(cleanCss())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(DIST_RESOURCES_PATH + '/css'));
+});
+
+//Queries
+gulp.task('queries', function () {
+
+    return gulp.src(CSS_PATH + '/queries.css')
+        .pipe(plumber(function (err) {
+            console.log('queries task error!');
+            console.log(err);
+            this.emit('end');
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(autoprefixer())
+        .pipe(concat('queries.css'))
         .pipe(cleanCss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIST_RESOURCES_PATH + '/css'));
@@ -92,7 +109,7 @@ gulp.task('export', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['clean', 'images', 'vendor', 'styles'], function () {
+gulp.task('default', ['clean', 'images', 'vendor', 'styles', 'queries'], function () {
     console.log('aws key:'+gutil.env.key)
     console.log('user:'+gutil.env.user)
 })

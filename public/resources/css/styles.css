@@ -72,6 +72,13 @@ img, iframe, video, object {
     max-width: 100%;
 }
 
+/*---REUSABLE COMPONENTS-----*/
+
+.row {
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
 /* ---- HEADER ---- */
 
 header {
