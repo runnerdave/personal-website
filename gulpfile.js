@@ -23,6 +23,7 @@ const DIST_RESOURCES_PATH = DIST_PATH + '/resources';
 const DIST_VENDOR_PATH = DIST_PATH + '/vendor';
 const IMAGES_PATH = 'public/resources/**/images/**/*.{png,jpeg,jpg,svg,gif}';
 const CSS_PATH = 'public/resources/css';
+const SCRIPTS_PATH = 'public/resources/js/**/*';
 const ZIP_FILE = 'website.zip';
 const VENDOR_PATH = 'public/vendor/**/*';
 
@@ -58,6 +59,12 @@ gulp.task('queries', function () {
         .pipe(cleanCss())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(DIST_RESOURCES_PATH + '/css'));
+});
+
+//Scripts
+gulp.task('scripts', function () {
+    return gulp.src(SCRIPTS_PATH)
+        .pipe(gulp.dest(DIST_RESOURCES_PATH + '/js'));
 });
 
 //Vendor
@@ -109,7 +116,7 @@ gulp.task('export', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['clean', 'images', 'vendor', 'styles', 'queries'], function () {
+gulp.task('default', ['clean', 'images', 'vendor', 'styles', 'queries', 'scripts'], function () {
     console.log('aws key:'+gutil.env.key)
     console.log('user:'+gutil.env.user)
 })
