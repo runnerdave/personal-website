@@ -135,6 +135,36 @@ header {
     border-bottom: 2px solid #e67e22;
 }
 
+/* --- STICKY NAV --- */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #e5e5e5;
+    z-index: 9999;
+}
+
+.sticky .main-nav {
+    margin-top: 18px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 16px 0;
+    color: #555;
+}
+
+.sticky .logo {
+    display: none;
+}
+
+.sticky .logo-black {
+    display: block;
+}
+
 /* --- HERO BOX ---*/
 
 .hero-text-box {
@@ -201,6 +231,37 @@ h3 {
     font-size: 90%;
 }
 
+/* ---- ICONS ---- */
+
+.icon-big {
+    font-size: 350%;
+    color: #e67e22;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    color: #e67e22;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    margin-right: 10px;
+    /*secrets to align icons*/
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -7px;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 /* ----- BUTTONS ----- */
 
 .btn:link,
@@ -245,6 +306,36 @@ input[type=submit] {
 input[type=submit]:hover,
 input[type=submit]:active {
     background-color: #cf6d17;
+}
+
+/*------ABOUT ME-----*/
+
+.section-about-me .long-copy {
+    margin-bottom: 30px;
+}
+
+/*-----LATELY--------*/
+
+.section-lately {
+    background-color: #f5f5f5;
+}
+
+/*-----WORK--------*/
+
+.section-work {
+    background-color: #f5f5f5;
+    text-align: center;
+
+}
+
+.certification-badge {
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+.certification-box {
+    margin-left: 10px;
 }
 
 /*------FOOTER-------*/

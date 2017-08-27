@@ -40,12 +40,17 @@
     }
 
     .row,
-    .hero-box {
+    .hero-text-box {
         padding: 0 4px;
     }
 
     .main-nav {
         display: none;
+    }
+
+    .certification-badge {
+        width: 60%;
+        height: 60%;
     }
 }
 
@@ -53,5 +58,10 @@
 @media only screen and (max-width: 480px) {
     section {
         padding: 25px 0;
+    }
+
+    .certification-badge {
+        width: 60%;
+        height: 60%;
     }
 }
