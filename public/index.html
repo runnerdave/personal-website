@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i" rel="stylesheet"/>
     <link rel="stylesheet" href="vendor/css/normalize.css" type="text/css"/>
     <link rel="stylesheet" href="vendor/css/grid.css" type="text/css"/>
-    <link rel="stylesheet" href="resources/css/styles.css" type="text/css"/>
     <link rel="stylesheet" href="vendor/css/ionicons.min.css" type="text/css"/>
+    <link rel="stylesheet" href="vendor/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="resources/css/styles.css" type="text/css"/>
     <link rel="stylesheet" href="resources/css/queries.css" type="text/css"/>
 
     <!--[if IE]>
@@ -25,8 +26,8 @@
 <header>
     <nav>
         <div class="row">
-            <img src="resources/images/logo-white.png" alt="logo" class="logo"/>
-            <img src="resources/images/logo.png" alt="logo" class="logo-black"/>
+            <a href="/"><img src="resources/images/logo-white.png" alt="logo" class="logo"/>
+            <img src="resources/images/logo.png" alt="logo" class="logo-black"/></a>
             <ul class="main-nav">
                 <li>
                     <a href="#about_href">About me</a>
@@ -41,6 +42,7 @@
                     <a href="#work_href">Professional experience</a>
                 </li>
             </ul>
+            <a class="mobile-nav-icon"><i class="ion-navicon-round"></i></a>
         </div>
     </nav>
     <div class="hero-text-box">
@@ -63,7 +65,7 @@
             <p>Software developer by profession, mostly web development, java, javascript, bash. All the fun stuff.</p>
         </div>
         <div class="col span-1-of-4 box">
-            <i class="ion-android-bicycle icon-big"></i>
+            <i class="ion-android-bicycle icon-big js--active"></i>
             <h3>Active</h3>
             <p>Always pushing to get tired, sweaty: camping, cycling, running, exploring.</p>
         </div>
@@ -73,7 +75,7 @@
             <p>Learning languages, people's culture and history, travelling.</p>
         </div>
         <div class="col span-1-of-4 box">
-            <i class="ion-beer icon-big"></i>
+            <i class="ion-beer icon-big js--melbourne"></i>
             <h3>Melbourne</h3>
             <p>That is where I live, amazing beer, beautiful streets and parks and coffee.</p>
         </div>
@@ -150,22 +152,25 @@
         <h3>Professional certifications</h3>
     </div>
     <div class="row">
-        <div class="col span-1-of-3 certification-box">
-            <figure class="certification-badge"><img src="resources/images/oracle-cert.png"></figure>
-            <p>Oracle Certified Professional, Java SE 8 Programmer</p>
-            <a href="https://www.youracclaim.com/badges/e08c6b62-5dba-40af-b238-817023ec5574?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BlyqUnjF3REq8%2Fvr1QXtZ2w%3D%3D"
-               class="btn btn-full">Verify me!</a>
-        </div>
-        <div class="col span-1-of-3 certification-box">
-            <figure class="certification-badge"><img src="resources/images/oracle-cert.png"></figure>
-            <p>Oracle Certified Associate, Java SE 8 Programmer</p>
-            <a href="https://www.youracclaim.com/badges/cc33cad9-e7a3-4cf4-b702-e4f20eb09ba2/linked_in_profile?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BqgiWR6h%2FQo6VKTq6x8VzxQ%3D%3D"
-               class="btn btn-full">Verify me!</a>
-        </div>
-        <div class="col span-1-of-3 certification-box">
-            <figure class="certification-badge"><img src="resources/images/code-school.png"></figure>
-            <p>Shaping up with Angular.js</p>
-            <a href="https://www.codeschool.com/courses/shaping-up-with-angularjs" class="btn btn-full">Verify me!</a>
+        <div class="wrapper clearfix">
+            <div class="col span-1-of-3">
+                <figure class="certification-badge"><img src="resources/images/oracle-cert.png"></figure>
+                <p>Oracle Certified Professional, Java SE 8 Programmer</p>
+                <a href="https://www.youracclaim.com/badges/e08c6b62-5dba-40af-b238-817023ec5574?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BlyqUnjF3REq8%2Fvr1QXtZ2w%3D%3D"
+                   class="btn btn-full">Verify me!</a>
+            </div>
+            <div class="col span-1-of-3">
+                <figure class="certification-badge"><img src="resources/images/oracle-cert.png"></figure>
+                <p>Oracle Certified Associate, Java SE 8 Programmer</p>
+                <a href="https://www.youracclaim.com/badges/cc33cad9-e7a3-4cf4-b702-e4f20eb09ba2/linked_in_profile?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BqgiWR6h%2FQo6VKTq6x8VzxQ%3D%3D"
+                   class="btn btn-full">Verify me!</a>
+            </div>
+            <div class="col span-1-of-3">
+                <figure class="certification-badge"><img src="resources/images/code-school.png"></figure>
+                <p>Shaping up with Angular.js</p>
+                <a href="https://www.codeschool.com/courses/shaping-up-with-angularjs" class="btn btn-full">Verify
+                    me!</a>
+            </div>
         </div>
     </div>
 </section>
