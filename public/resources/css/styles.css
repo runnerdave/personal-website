@@ -132,7 +132,7 @@ header {
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #e67e22;
+    border-bottom: 2px solid #72AED9;
 }
 
 /* --- STICKY NAV --- */
@@ -218,7 +218,7 @@ h2 {
 h2:after {
     display: block;
     height: 2px;
-    background-color: #e67e22;
+    background-color: #074E80;
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -248,13 +248,13 @@ h3 {
 
 .icon-big {
     font-size: 350%;
-    color: #e67e22;
+    color: #074E80;
     display: block;
     margin-bottom: 10px;
 }
 
 .icon-small {
-    color: #e67e22;
+    color: #074E80;
     display: inline-block;
     width: 30px;
     text-align: center;
@@ -285,7 +285,7 @@ input[type=submit] {
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
-    border: 1px solid #e67e22;
+    border: 1px solid #72afd9;
     -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
@@ -293,32 +293,32 @@ input[type=submit] {
 .btn-full:link,
 .btn-full:visited,
 input[type=submit] {
-    background-color: #e67e22;
+    background-color: #096cb2;
     color: #fff;
     margin-right: 15px;
 }
 
 .btn-ghost:link,
 .btn-ghost:visited {
-    color: #e67e22;
+    color: #72afd9;
 }
 
 .btn-full:hover,
 .btn-full:active {
-    border: 1px solid #cf6d17;
+    border: 1px solid #72afd9;
 }
 
 .btn-ghost:hover,
 .btn-ghost:active {
     color: #fff;
-    border: 1px solid #cf6d17;
+    border: 1px solid #72afd9;
 }
 
 .btn:hover,
 .btn:active,
 input[type=submit]:hover,
 input[type=submit]:active {
-    background-color: #cf6d17;
+    background-color: #72afd9;
 }
 
 /*------ABOUT ME-----*/
@@ -424,7 +424,11 @@ footer {
 }
 
 .ion-social-instagram:hover {
-    color: #125688;
+    color: #f09433;
+}
+
+.ion-social-linkedin:hover {
+    color: #007bb6;
 }
 
 footer p {
