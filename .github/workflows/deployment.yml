@@ -16,3 +16,34 @@ jobs:
           path: public
       - name: Output Contents
         run: ls
+  deploy:
+      permissions:
+          id-token: write # This is required for requesting the JWT
+          contents: read  # This is required for actions/checkout
+      needs: upload
+      runs-on: ubuntu-latest
+      steps:
+          - name: Get code
+            uses: actions/checkout@v3
+          - name: Get build artifacts
+            uses: actions/download-artifact@v3
+            with:
+                name: dist-files
+                path: ./public
+          - name: Output contents
+            run: ls
+          - name: Get AWS permissions
+            uses: aws-actions/configure-aws-credentials@v4
+            with: 
+                role-to-assume: arn:aws:iam::000776447645:role/github-workflow
+                aws-region: ap-southeast-2
+          - name: Deploy site
+            id: deploy
+            uses: ./.github/actions/deploy-s3-docker
+            with:
+                bucket: runnerdave-github-actions-prac
+                dist-folder: ./dist
+          - name: Output information
+            run: |
+                echo "Live URL: ${{ steps.deploy.outputs.website-url }}"
+  
